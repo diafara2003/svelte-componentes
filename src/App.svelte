@@ -7,6 +7,7 @@
   let titulo = "";
   let descripcion = "";
   let imagen = "";
+  let show = false;
 
   let post = [
     {
@@ -43,21 +44,25 @@
 
 <Header titulo="componente" />
 <div class="container">
+  Mostrar Jumbotom
+  <input type="checkbox" bind:checked={show} />
 
-  <Jumbotron nombre="Hello" let:mostrar>
-    <span slot="subtitulo">Desde span</span>
+  {#if show}
+    <Jumbotron nombre="Hello" let:mostrar>
+      <span slot="subtitulo">Desde span</span>
 
-    <p slot="parrafo">Desde un parrafo</p>
-    {#if mostrar}
-      <div>
-        <hr />
-        <button class="btn-danger">boton</button>
-      </div>
-    {:else}
-      <h2>coloca el cursor aca</h2>
-    {/if}
+      <p slot="parrafo">Desde un parrafo</p>
+      {#if mostrar}
+        <div>
+          <hr />
+          <button class="btn-danger">boton</button>
+        </div>
+      {:else}
+        <h2>coloca el cursor aca</h2>
+      {/if}
 
-  </Jumbotron>
+    </Jumbotron>
+  {/if}
 
   <CardGrid {post} />
 

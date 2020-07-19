@@ -1,4 +1,5 @@
 <script>
+  import { onMount, onDestroy, beforeUpdate, afterUpdate, tick } from "svelte";
   export let nombre;
 
   let mostrar;
@@ -9,6 +10,18 @@
   function salir() {
     mostrar = false;
   }
+
+  //creacion
+  //scripts
+  //onMount
+  //onDestroy
+
+
+
+  //actualizacion del DOM
+  //beforeUpdate
+  //afterUpdate
+  //tick
 </script>
 
 <style>
@@ -39,5 +52,5 @@
     <slot name="parrafo" />
   </p>
 
-  <slot mostrar={mostrar}></slot>
+  <slot {mostrar} />
 </div>

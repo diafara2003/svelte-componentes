@@ -5,8 +5,8 @@
     "../../Jumbotron.svelte"
   ],
   "sourcesContent": [
-    "<script>\n  export let nombre;\n\n  let mostrar;\n\n  function entrar() {\n    mostrar = true;\n  }\n  function salir() {\n    mostrar = false;\n  }\n</script>\n\n<style>\n  h2 {\n    color: red;\n    text-decoration: underline;\n    font-weight: bold;\n  }\n\n  p {\n    text-align: justify;\n    color: blue;\n    text-transform: uppercase;\n    font-style: italic;\n  }\n</style>\n\n<div class=\"jumbotron mt-4 p-3\" on:mouseenter={entrar} on:mouseleave={salir}>\n  <h1>{nombre}</h1>\n\n  <h2>\n    <slot name=\"subtitulo\">\n      <h2>Subtitulo</h2>\n    </slot>\n  </h2>\n\n  <p>\n    <slot name=\"parrafo\" />\n  </p>\n\n  <slot mostrar={mostrar}></slot>\n</div>\n"
+    "<script>\n  import { onMount, onDestroy, beforeUpdate, afterUpdate, tick } from \"svelte\";\n  export let nombre;\n\n  let mostrar;\n\n  function entrar() {\n    mostrar = true;\n  }\n  function salir() {\n    mostrar = false;\n  }\n\n  //creacion\n  //scripts\n  //onMount\n  //onDestroy\n\n\n\n  //actualizacion del DOM\n  //beforeUpdate\n  //afterUpdate\n  //tick\n</script>\n\n<style>\n  h2 {\n    color: red;\n    text-decoration: underline;\n    font-weight: bold;\n  }\n\n  p {\n    text-align: justify;\n    color: blue;\n    text-transform: uppercase;\n    font-style: italic;\n  }\n</style>\n\n<div class=\"jumbotron mt-4 p-3\" on:mouseenter={entrar} on:mouseleave={salir}>\n  <h1>{nombre}</h1>\n\n  <h2>\n    <slot name=\"subtitulo\">\n      <h2>Subtitulo</h2>\n    </slot>\n  </h2>\n\n  <p>\n    <slot name=\"parrafo\" />\n  </p>\n\n  <slot {mostrar} />\n</div>\n"
   ],
   "names": [],
-  "mappings": "AAcE,EAAE,cAAC,CAAC,AACF,KAAK,CAAE,GAAG,CACV,eAAe,CAAE,SAAS,CAC1B,WAAW,CAAE,IAAI,AACnB,CAAC,AAED,CAAC,cAAC,CAAC,AACD,UAAU,CAAE,OAAO,CACnB,KAAK,CAAE,IAAI,CACX,cAAc,CAAE,SAAS,CACzB,UAAU,CAAE,MAAM,AACpB,CAAC"
+  "mappings": "AA2BE,EAAE,cAAC,CAAC,AACF,KAAK,CAAE,GAAG,CACV,eAAe,CAAE,SAAS,CAC1B,WAAW,CAAE,IAAI,AACnB,CAAC,AAED,CAAC,cAAC,CAAC,AACD,UAAU,CAAE,OAAO,CACnB,KAAK,CAAE,IAAI,CACX,cAAc,CAAE,SAAS,CACzB,UAAU,CAAE,MAAM,AACpB,CAAC"
 }
